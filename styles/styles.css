@@ -1,0 +1,61 @@
+.search-bar{
+    width:50%;
+    height: 50px;
+    padding-bottom: 10%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.command-bt{
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.round{
+    border-radius: 50%;
+}
+
+.typing-location{
+    background-color: white;
+    width: 100%;
+}
+
+.tasks-list{
+    position: fixed;
+    margin-top: 10%;
+    width: 50vw;
+    height: 50vh;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.tasks{
+    width: 100%;
+    padding: 5%;
+}
+.tasks > li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5% 0;
+    background-color: white;
+    border-color: black;
+    border-width: 1px;
+    color: black;
+    height: 50px;
+    padding: 5% 0%;
+    width: fit-content;
+}
+
+.sc{
+    display: flex;
+}
