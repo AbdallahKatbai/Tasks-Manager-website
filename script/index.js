@@ -8,12 +8,11 @@ let i = 0
 let task = document.getElementsByClassName('task')
 add_bt.addEventListener('click', function(){
     if(txt_bar.value != ''){
-    let new_task = document.createElement('div')
-    new_task.setAttribute('class', 'task')
-    new_task.innerHTML = '<div class="task"><div class="checkbox"><img src="assets and mages/91-918618_checked-checkbox-512-yellow-check-icon-orange-png.png" alt=""></div><div class="set-text">' + txt_bar.value + '</div></div>'
-    task[counter] = new_task
-    txt[counter] = txt_bar.value
-    tasks.innerHTML = new_task.innerHTML + tasks.innerHTML
+    task[counter] = document.createElement('div')
+    task[counter].setAttribute('class', 'task')
+    task[counter].innerHTML = '<div class="task"><div class="checkbox"><img src="assets and mages/91-918618_checked-checkbox-512-yellow-check-icon-orange-png.png" alt=""></div><div class="set-text">' + txt_bar.value + '</div></div>'
+    tasks.innerHTML = task[counter].innerHTML + tasks.innerHTML
+    txt[counter].innertext = txt_bar.value
     txt_bar.value = ''
     check[counter].value = true
     counter += 1
