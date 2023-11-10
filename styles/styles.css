@@ -1,6 +1,6 @@
 .search-bar{
     width:50%;
-    height: 50px;
+    height: 20px;
     padding-bottom: 10%;
     position: fixed;
     display: flex;
@@ -9,21 +9,17 @@
     gap: 10px;
 }
 
+.task-name{
+    width: 100%;
+}
+
 .command-bt{
-    height: 50px;
     width: 50px;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
 }
 
 .round{
     border-radius: 50%;
-}
-
-.typing-location{
-    background-color: white;
-    width: 100%;
 }
 
 .tasks-list{
@@ -37,6 +33,10 @@
     padding: 10px;
     overflow-y: scroll;
 }
+.task-name{
+    height: 100%;
+    width: 100%;
+}
 
 .tasks{
     width: 100%;
@@ -46,18 +46,18 @@
 .task{
     display: flex;
     align-items: center;
+    height: 50px;
 }
 .set-text{
     display: flex;
     align-items: center;
     margin: 2% 5%;
     background-color: bisque;
-    border-color: black;
-    border-width: 10px;
     color: black;
     height: 45px;
     padding: 2% 10px;
     width: fit-content;
 }
-
-
+.checkbox{
+    height: 100%;
+}
