@@ -24,7 +24,9 @@ add_bt.addEventListener('click', function(){
 })*/
 tasks.addEventListener('click', function (event) {
     const target = event.target;
-    if (target.classList.contains('checkbox')) {
+    const checkbox = target.closest('.checkbox');
+
+    if (checkbox) {
         const index = Array.from(target.closest('.task').parentNode.children).indexOf(target.closest('.task'));
         console.log('Checkbox clicked at index:', index);
         // Now you can manipulate the corresponding set-text element
