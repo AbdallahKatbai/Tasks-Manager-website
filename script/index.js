@@ -15,18 +15,23 @@ add_bt.addEventListener('click', function(){
     txt_bar.value = ''
     counter += 1
     check = document.querySelectorAll(' .checkbox')
+    console.log('Number of checkboxes:', check.length);
     txt = document.querySelectorAll(' .set-text')
     }
 })
 /*task[i].addEventListener('dblclick', function(){
     txt[i].classList.toggle('crossed')
 })*/
-check.forEach((Elm, index) => {
-    Elm.addEventListener('click', function() {
-        console.log(index)
-        txt[index].classList.toggle('crossed')
-    })
-})
+tasks.addEventListener('click', function (event) {
+    const target = event.target;
+    if (target.classList.contains('checkbox')) {
+        const index = Array.from(target.closest('.task').parentNode.children).indexOf(target.closest('.task'));
+        console.log('Checkbox clicked at index:', index);
+        // Now you can manipulate the corresponding set-text element
+        const txt = document.querySelectorAll('.set-text')[index];
+        txt.classList.toggle('crossed');
+    }
+});
 
 txt.forEach((elm, index) => {
     elm.addEventListener('dblclick', function(){
