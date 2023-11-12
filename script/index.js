@@ -4,7 +4,6 @@ let txt = document.querySelectorAll(' .set-text')
 let tasks = document.getElementsByClassName('tasks')[0]
 let check = document.querySelectorAll(' .checkbox')
 let counter = 0
-let i
 const task = document.getElementsByClassName('task')
 add_bt.addEventListener('click', function(){
     if(txt_bar.value != ''){
@@ -70,6 +69,37 @@ tasks.addEventListener('click', function(event) {
         const index = Array.from(target.closest('.task').parentNode.children).indexOf(target.closest('.task'))
         const task = document.querySelectorAll('.task')[index]
         tasks.removeChild(task)
+        counter -= 1
     }
 })
 
+//filter functions
+function show_completed(){
+    for( let i = 0; i < counter; i++){
+        let task = document.querySelectorAll('.task')[i]
+        let tasktxt = document.querySelectorAll('.set-text')[i]
+        if(tasktxt.classList.contains('crossed')){
+            console.log('txt' + i + 'is crosssed')
+        }
+        else{console.log('txt' + i + 'is not crossed')}
+    }
+}
+
+const filter = document.getElementsByClassName('filter_bt')[0]
+const filter_img = document.getElementsByClassName('filter_img')[0]
+const initial_filter_state = filter.innerHTML
+filter_img.addEventListener('click', show_completed())
+filter_img.addEventListener('click', function(){
+    console.log('pressed')
+    console.log(filter.innerHTML== initial_filter_state)
+    if(filter.innerHTML == initial_filter_state){
+        console.log('add')        
+        filter.innerHTML += '<div class="filters"><p class="completed">Completed</p><p class="uncompleted">Uncompleted</p></div>'
+    }
+    else if(filter.innerHTML == (initial_filter_state + '<div class="filters"><p class="completed">Completed</p><p class="uncompleted">Uncompleted</p></div>')){
+        console.log('remove')
+        filter.innerHTML = initial_filter_state
+    }
+})
+const completed = document.getElementsByClassName('completed')[0]
+completed.addEventListener('click', show_completed())

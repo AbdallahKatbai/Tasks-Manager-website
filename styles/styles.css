@@ -23,6 +23,24 @@
     text-align: center;
 }
 
+.filter_bt{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.filter_img{
+    height: 20px;
+}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 80px;
+    width: 100px;
+}
 
 .round{
     border-radius: 50%;
